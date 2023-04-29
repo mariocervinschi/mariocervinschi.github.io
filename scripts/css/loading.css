@@ -1,0 +1,9 @@
+#load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10001;
+  background: url(/assets/Spin-1s-200px.svg) no-repeat center center
+    rgb(8, 8, 8);
+  background-size: 100px;
+}

@@ -1,0 +1,340 @@
+<html lang="en">
+  <html>
+    <head>
+      <title>Pagina principală</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="stylesheet" href="/scripts/css/index.css" />
+      <link rel="stylesheet" href="/scripts/css/default.css" />
+      <link rel="stylesheet" href="/scripts/css/photos.css" />
+      <link rel="stylesheet" href="/scripts/css/events.css" />
+
+      <link rel="stylesheet" href="/scripts/css/loading.css" />
+      <link rel="icon" type="image/png" href="/assets/logo.png" />
+
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-8jgo{border-color:#ffffff;text-align:center;vertical-align:top}
+        </style>
+
+    </head>
+
+    <body class="bgcolour">
+      <!-- NAV BAR -->
+      <div id="load"></div>
+      <nav id="wrapper">
+
+        <ul class="nav-links">
+          <li style="margin-top:30px">
+            <a class="OpenSans-500no" href="/index.html">Acasă</a>
+          </li>
+          <li style="margin-top:35px">
+            <a class="OpenSans-500no" href="/arg.html">Argumentarea temei alese</a>
+          </li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/probl.html">Enunțul problemei</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500" href="/progr.html">Programul nostru</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/conc.html">Concluzii</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/asd.html">Avantaje și dezavantaje</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/bibweb.html">Bibliografie/Webografie</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+      <!-- CONTENTS -->
+
+
+
+      <div class="evenimente" style="padding-top: 100px; padding-top: 100px;">
+        <h1 class="Montserrat-600 aligncen">
+            <div  style="font-size: 24;">Programul problemei (în C++)</div>
+            
+        </h1>
+
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Programul va începe cu declararea bibliotecilor  #include &lt;iostream&gt;, pentru a putea citi de la tastatura datele de intrare (în cazul nostru, nodul de start de unde dorim să începem parcurgerea DFS), și #include &lt;fstream&gt;, pentru a putea memora datele de intrare în fișier, mai exact în „date.in”.
+        </div>
+        <div class="info Consolas aligncen" style="text-align: justify;">
+          <br><div  style="color:green">
+          #include &lt;iostream&gt; <br>
+          #include &lt;fstream&gt;</div>
+            <br><br>
+           <div><a style="color:cadetblue">using namespace</a> <a style="color:green">std</a>;</div>
+        </div>
+        <br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Datele noastre de intrare vor fi memorate cu ajutorul unui HEAP. Pentru a face acest lucru va trebui să deschidem fișierul de intrare „date.in” cu ajutorul instrucțiunii următoare:
+        </div>
+        <div class="info Consolas aligncen" style="text-align: justify;">
+          <br><div><a style="color:green">ifstream</a> in<a style="color:red">(</a><a style="color:cadetblue">"date.in"</a><a style="color:red">)</a>;</div>
+        </div>
+        <br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Urmează să declarăm structura noastră ce ne va ajuta sa creăm HEAP-ul nostru și funcția/subprogramul de tip void, deoarece nu va trebui să returnăm nimic, numit construire_heap pentru a îl putea memora.
+        </div>
+        <div class="info Consolas aligncen" style="text-align: justify;">
+          <div>
+            <br><a style="color:cadetblue">struct </a> LISTA         <br>
+{                                 <br>
+  &emsp;<a style="color:cadetblue;  ">int </a> inf;                      <br>
+  &emsp;LISTA *urm;                   <br>
+};                                <br>
+void construire_heap(int &n, LISTA *H[])        <br>
+{<br>
+  &emsp;int i, j, nt, t;<br>
+  &emsp;LISTA *first, *nou;<br>
+  &emsp;in >> n; <br>
+  &emsp;&emsp;  for(i = 1; i &lt;= n; i++)<br>
+  &emsp;&emsp;  {<br>
+    &emsp;&emsp;&emsp;        in >> nt; <br>
+    &emsp;&emsp;&emsp; first = NULL;<br>
+    &emsp;&emsp;&emsp;&emsp;    for(j = 1; j &lt;= nt; j++)<br>
+    &emsp;&emsp;&emsp;&emsp;   {<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;       in >> t; <br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;     nou = new(LISTA); <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;       nou -> inf = t;<br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;    nou -> urm = first;<br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;    first = nou;<br>
+            &emsp;&emsp;&emsp;&emsp;   }<br>
+            &emsp;&emsp;&emsp; H[i] = first;<br>
+      &emsp;&emsp;&emsp;}<br>
+}<br>
+
+          </div>
+        </div><br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Începem cu declararea variabilelor ajutatoare, urmând să citim numarul de noduri pentru graful nostru neorientat G(X, U). Prima structură repetitivă are rolul de a citi câte noduri au legătura directa cu nodul cu numărul i, iar cea de-a doua structură repetitivă ne va ajuta să memorăm în HEAP care sunt acestea. 
+        </div>
+        <div class="info Poppins-600 aligncen">
+          <br><img class="info aligncen" src="photos/Screenshot 2023-04-29 193751.png">
+        </div>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+        <br>Funcțiile principale ale programului<br><br>
+        </div>
+        <div class="info Consolas aligncen" style="text-align: justify;">
+          <div>
+int legatura(LISTA *H[], int x, int y) <br>
+{ <br>
+  &emsp;LISTA *linia; <br>
+  &emsp;linia = H[x]; <br>
+  &emsp;while(linia != NULL) <br>
+  &emsp;{ <br>
+    &emsp;&emsp;if(linia -> inf == y) <br>
+    &emsp;&emsp;&emsp;return 1; <br>
+            &emsp;&emsp;linia = linia -> urm; <br>
+        &emsp;} <br>
+        &emsp;return 0; <br>
+} <br>
+void DFS(int viz[], int noduri[], int ns, LISTA *H[], int n, int& j) <br>
+{ <br>
+  &emsp;int i; <br>
+  &emsp;viz[ns] = 1; <br>
+  &emsp;noduri[j++] = ns; <br>
+  &emsp;for(i = 1; i &lt;= n; i++) <br>
+  &emsp;&emsp;if(viz[i] == 0 and legatura(H, i, ns) == 1) <br>
+  &emsp;&emsp;&emsp;DFS(viz, noduri, i, H, n, j); <br>
+} <br><br>
+
+          </div>
+        </div>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Funcția „legatura” are rolul de a răspunde la întrebarea: există legătură directă între nodurile oarecare x și y? În cazul în care aceasta există, se va returna 1, adică adevărat, iar in caz contrar 0, adică nu există o asemenea legătură.
+        </div><br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Următoarea funcție numită „DFS” (Depth First Search) ne va ajuta să explorăm graful în mod RECURSIV, după cum spune și numele metodei, în adâncime. Ea va proceda astfel: 
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          •	Citim din funcția main nodul de start de la tastatură (notat de noi cu ns), de unde vrem sa începem parcurgerea;
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          •	Urmează să căutăm și să determinăm primul său vecin nevizitat i al lui ns, care va deveni nodul curent, unde poziția i din vector va fi notată cu 1, fapt ce ne arată că prin acest vector am trecut o dată;
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          •	Apoi se vizitează primul vecin nevizitat al lui i, și așa mai departe, mergând în adâncime, până când ajungem la un vârf care nu mai are vecini nevizitați. Când ajungem într-un astfel de vârf, ne întoarcem la „părintele” acestuia – vârful din care am ajuns în acesta; 
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          •	Dacă acest nod mai are vecini nevizitați, alegem următorul vecin nevizitat al său, în ordine lexicografică, și continuam parcurgerea în același mod;
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          •	Dacă nici acest nod nu mai are vecini nevizitați, revenim în nodul său părinte și continuăm în același mod, până când toate nodurile accesibile din nodul de start sunt vizitate.
+        </div><br><br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Observații!
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          1) Parcurgerea grafului se va face în ordine lexico grafică! (Ex: Dacă nodul 2 îi are ca vecini pe 3 și pe 1, următorul vârf vizitat va fi 1).
+        </div><br>
+        <div class="info Montserrat-400 aligncen" style="text-align: justify;">
+          2) Dacă graful nu este conex, nu se vor vizita toate vârfurile.
+        </div>
+        <div class="info Montserrat-500 aligncen" style="text-align: justify;">
+          <br><img class="aligncen info" src="/photos/dfs-animatie-x1.gif" style="width:30%; background-color: beige;">
+        </div>
+        <br><div class="info Montserrat-400 aligncen">
+          Parcurgerea din nodul 5: 5-2-1-4-6-3-7-8-9
+        </div><br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Această funcție continuă să parcurgă graful până când nu mai exista vreun nod nevizitat. În acest fel, datele de intrare sunt prelucrate și se transformă, prin parcurgerea DFS, în date de ieșire, care vor fi memorate în vectorul „noduri”.
+        </div><br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg .tg-urxo{border-color:#ffffff;color:#ffffff;text-align:center;vertical-align:top}
+            </style>
+            <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-urxo">noduri</th>
+                <th class="tg-urxo">0</th>
+                <th class="tg-urxo">5</th>
+                <th class="tg-urxo">2</th>
+                <th class="tg-urxo">1</th>
+                <th class="tg-urxo">4</th>
+                <th class="tg-urxo">6</th>
+                <th class="tg-urxo">3</th>
+                <th class="tg-urxo">7</th>
+                <th class="tg-urxo">8</th>
+                <th class="tg-urxo">9</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-urxo"></td>
+                <td class="tg-urxo">0</td>
+                <td class="tg-urxo">1</td>
+                <td class="tg-urxo">2</td>
+                <td class="tg-urxo">3</td>
+                <td class="tg-urxo">4</td>
+                <td class="tg-urxo">5</td>
+                <td class="tg-urxo">6</td>
+                <td class="tg-urxo">7</td>
+                <td class="tg-urxo">8</td>
+                <td class="tg-urxo">9</td>
+              </tr>
+            </tbody>
+            </table>
+        </div> <br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Main-ul programului
+        </div><br><br>
+        <div class="info Consolas aligncen" style="text-align: justify;">
+          int main()<br>
+          {<br>
+            &emsp;LISTA *H[100];<br>
+            &emsp;int i, n, m, ns, j = 1;<br>
+            &emsp;int noduri[100] = {0}, viz[100] = {0};<br>
+            &emsp;construire_heap(n, m, H);<br>
+            &emsp;cin >> ns; <br>
+            &emsp;DFS(viz, noduri, ns, H, n, j);<br>
+            &emsp;for(i = 1; i < j; i++)<br>
+            &emsp;
+            &emsp;&emsp;cout << noduri[i] << " ";<br>
+            &emsp;return 0;<br>
+          }<br><br>
+                    
+        </div>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          În main vom declara toate variabilele necesare și vom apela funcțiile rând pe rând. Prima va fi construire_heap, care ne va ajuta sa memorăm datele de intrare (citite din fișier), după aceea vom citi un număr natural nenul ns, ns &le; n (n fiind numărul de noduri, memorat în fișierul de intrare). Urmează să apelăm funcția DFS, unde vom prelucra datele de intrare și le vom transforma în date de ieșire, memorându-le în vectorul „noduri”.
+        </div><br>
+        <div class="info Montserrat-400 aligncen">
+          De exemplu, pentru nodul 5 se va afișa:
+        </div><br>
+        <div class="info Montserrat-400 aligncen">
+          5 2 1 4 6 3 7 8 9
+        </div><br>
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Afișarea o vom face tot în main, cu ajutorul unei bucle repetitive, care va merge de la i până la j (j fiind un număr natural reprezentând prin câte noduri a trecut DFS ul), afișându-se toate datele din vectorul „noduri” de la prima poziție a sa (1), până la j.
+        </div><br>
+        <div class="info Poppins-600 aligncen">
+          Vezi tot programul aici:
+          <script src="https://ideone.com/e.js/IB64bE" type="text/javascript" ></script>
+        </div>
+        
+        <br><br>
+
+      </div>
+
+    
+        
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="footer-container">
+        <div class="footer">
+          <div class="footer-heading footer-1">
+            <h2 class="Poppins-600">Rețele sociale</h2>
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >Instagram</a
+            >
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >Facebook</a
+            >
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >YouTube</a
+            >
+          </div>
+          <div class="footer-heading footer-2">
+            <h2 class="Poppins-600">Contact</h2>
+
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >WhatsApp</a
+            >
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >EMail</a
+            >
+          </div>
+        </div>
+        <div
+          class="copyright Poppins-200"
+          style="
+            font-size: 14px;
+            margin-left: 30px;
+            margin-top: 150px;
+            margin-bottom: -75px;
+          "
+        >
+          <p>
+            &copy; 2023 Cervinschi Mario-Andrei. <br />
+            Toate drepturile rezervate.
+          </p>
+          <a
+            href="/index.html"
+            class="footer-logo"
+            style="margin-right: 30px"
+          ></a>
+        </div>
+      </div>
+      <script src="/scripts/js/index.js"></script>
+      <script src="/scripts/js/nav.js"></script>
+      <script src="/scripts/js/loading.js"></script>
+    </body>
+  </html>
+</html>

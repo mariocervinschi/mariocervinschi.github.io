@@ -1,0 +1,493 @@
+#myVideoMob {
+  display: none;
+}
+
+#myVideoDesk {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 800px;
+  height: auto;
+  z-index: -100;
+  opacity: 0.7;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  margin-top: 170px;
+  z-index: 10002;
+}
+
+.container .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10002;
+}
+
+.text {
+  font-size: 4vw;
+  color: #fafafa;
+  position: absolute;
+  display: contents;
+  justify-content: center;
+  align-items: center;
+  z-index: 10002;
+}
+
+.text a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 170px;
+}
+.dud {
+  color: #757575;
+}
+
+.events {
+  display: flex;
+  position: relative;
+}
+
+.gradient-border::after {
+  position: absolute;
+}
+
+::-webkit-scrollbar {
+  z-index: 10;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+@keyframes showTopText {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showBottomText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slider {
+  width: 800px;
+  height: 500px;
+  border: 10px;
+}
+
+.slides {
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 800px;
+  height: 500px;
+}
+
+.navigation-manual {
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid red;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.col-1 {
+  display: flex;
+}
+
+.animated-title {
+  color: #222;
+  font-family: Roboto, Arial, sans-serif;
+  height: 90vmin;
+  left: 50%;
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vmin;
+}
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.columnss {
+  float: left;
+  width: 50%;
+  }
+
+  .rowss:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+.animated-title > div div {
+  font-size: 8vmin;
+  padding: 2vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #000;
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: #767676;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+.text-top span {
+  font-size: 8vmin;
+}
+
+.text-bottom {
+  font-size: 60px;
+}
+
+.color-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(#7a3cf7, #5830a8);
+  border-radius: 20px 0 0 20px;
+  height: 100%;
+  width: 130%;
+  z-index: -1;
+  transform: translateX(200px);
+}
+
+#btn-form {
+  margin-top: 25px;
+  margin-bottom: 45px;
+  width: 165px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #5830a8;
+  color: #fff;
+  font-size: 18px;
+}
+
+#btn-form:hover {
+  cursor: pointer;
+  background-color: rgb(153, 126, 184);
+  transition: all 0.2s ease-out;
+}
+
+#btn-form:not(:hover) {
+  cursor: pointer;
+  background-color: #5830a8;
+  transition: all 0.165s ease-in;
+}
+
+#btn-form-footer {
+  margin-bottom: 45px;
+  width: 212px;
+  height: 27.5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 1px;
+  background-color: #5830a8;
+  color: #fff;
+  font-size: 16px;
+}
+
+#btn-form-footer:hover {
+  cursor: pointer;
+  background-color: rgb(153, 126, 184);
+  transition: all 0.2s ease-out;
+}
+
+#btn-form-footer:not(:hover) {
+  cursor: pointer;
+  background-color: #5830a8;
+  transition: all 0.165s ease-in;
+}
+
+.to-events {
+  text-align: center;
+  margin-top: -20px;
+  padding-bottom: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.circle {
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  height: 60px;
+  width: 60px;
+  background-color: #5830a8;
+  border-radius: 50%;
+  display: inline-block;
+  position: flex;
+}
+
+.send-pics {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.alichev {
+  display: block;
+  margin-top: 350px;
+  position: absolute;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll .text-scroll {
+  display: block;
+  margin-top: 425px;
+  color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chevron {
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fff;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text-scroll {
+  display: block;
+  margin-top: 75px;
+  margin-left: -30px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .chevron {
+    display: none;
+    transition: all 0.3s ease;
+  }
+  .text-scroll {
+    display: none;
+    transition: all 0.3s ease;
+  }
+  .scroll .text-scroll {
+    display: none;
+    transition: all 0.3s ease;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  @supports (backdrop-filter: blur(0.15rem)) {
+    .nav-links {
+      background: rgba(10, 10, 10, 0.829);
+      backdrop-filter: blur(0.8rem);
+      height: 900px;
+    }
+  }
+  .text {
+    font-size: 5vw;
+    transition: all 0.4s ease;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .row {
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .col-1 {
+    align-content: center;
+    margin-top: -50px;
+    transition: all 0.3s ease;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .row {
+    transition: all 0.3s ease;
+  }
+  .col-1 {
+    transition: all 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #myVideoDesk {
+    display: none;
+  }
+  #myVideoMob {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    z-index: -100;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+  .text {
+    font-size: 7vw;
+    transition: all 0.4s ease;
+  }
+  .chevron {
+    display: block;
+    transition: all 0.4s ease;
+  }
+  .text-scroll {
+    display: block;
+    transition: all 0.4s ease;
+  }
+
+  .scroll .text-scroll {
+    display: block;
+    transition: all 0.4s ease;
+  }
+
+  .container .scroll {
+    margin-top: 275px;
+  }
+}

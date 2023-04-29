@@ -1,0 +1,230 @@
+<html lang="en">
+  <html>
+    <head>
+      <title>Pagina principală</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="stylesheet" href="/scripts/css/index.css" />
+      <link rel="stylesheet" href="/scripts/css/default.css" />
+      <link rel="stylesheet" href="/scripts/css/photos.css" />
+      <link rel="stylesheet" href="/scripts/css/events.css" />
+
+      <link rel="stylesheet" href="/scripts/css/loading.css" />
+      <link rel="icon" type="image/png" href="/assets/logo.png" />
+
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-8jgo{border-color:#ffffff;text-align:center;vertical-align:top}
+        </style>
+
+    </head>
+
+    <body class="bgcolour">
+      <!-- NAV BAR -->
+      <div id="load"></div>
+      <nav id="wrapper">
+
+        <ul class="nav-links">
+          <li style="margin-top:30px">
+            <a class="OpenSans-500no" href="/index.html">Acasă</a>
+          </li>
+          <li style="margin-top:35px">
+            <a class="OpenSans-500no" href="/arg.html">Argumentarea temei alese</a>
+          </li>
+          <li style="margin-top:40px"><a class="OpenSans-500" href="/probl.html">Enunțul problemei</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/progr.html">Programul nostru</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/conc.html">Concluzii</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/asd.html">Avantaje și dezavantaje</a></li>
+          <li style="margin-top:40px"><a class="OpenSans-500no" href="/bibweb.html">Bibliografie/Webografie</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+      <!-- CONTENTS -->
+
+
+
+      <div class="evenimente" style="padding-top: 100px; padding-top: 100px;">
+        <h1 class="Montserrat-600 aligncen">
+            <div  style="font-size: 24;">Enunțul problemei</div>
+            
+        </h1>
+
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          Se consideră graful neorientat G(X, U) cu un număr de n noduri și fișierul “date.in”, care conține pe prima linie numărul natural n, reprezentând numărul de noduri, iar pe următoarele n linii numărul de noduri care au legătură cu nodul cu numărul i și care sunt acestea. Se cere să se reprezinte graful prin heap-uri și să se afișeze o parcurgere DFS (Depth First Search), plecând de la un anumit nod de start. Avem următorul exemplu de graf și, de asemenea, de date de intrare pentru graful nostru. <br><br><div style="text-align: center;">Fie graful de mai jos cu 9 noduri.</div>
+        </div>
+        <img class="info aligncen" src="photos/graph.png" style="width: 30%">
+        <br><br>
+
+        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+          <div class="rowss aligncen">
+            <div class="columnss" style="text-align: justify;">
+              Totodată, în tabelul alăturat am introdus datele de intrare necesare problemei noastre, pe baza grafului prezentat mai sus. Pe prima linie am introds un număr natural, 9, reprezentând numărul de noduri (n). Pe următoarele 9 linii am introdus, pe prima poziție din fiecare linie, numărul de noduri care au legătură cu nodul cu numărul i și, respectiv, care sunt cele i noduri. Exemplu pentru linia cu numărul 2. Sunt 3 noduri care au legătura cu nodul 2, acestea fiind 1, 3 și 5. Analog se va proceda și pentru restul nodurilor.
+            </div>
+
+            <div class="columnss" style="margin-left: auto; margin-right: 0; float:right;">
+                <table class="tg" style="margin-left:auto; margin-right:auto; color: #ffffff">
+                <thead>
+                  <tr>
+                    <th class="tg-8jgo"></th>
+                    <th class="tg-8jgo" colspan="4">date.in</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-8jgo">i</td>
+                    <td class="tg-8jgo" colspan="4">n = 9</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">1</td>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo">4</td>
+                    <td class="tg-8jgo"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo">3</td>
+                    <td class="tg-8jgo">1</td>
+                    <td class="tg-8jgo">3</td>
+                    <td class="tg-8jgo">5</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">3</td>
+                    <td class="tg-8jgo">1</td>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo"></td>
+                    <td class="tg-8jgo"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">4</td>
+                    <td class="tg-8jgo">3</td>
+                    <td class="tg-8jgo">1</td>
+                    <td class="tg-8jgo">5</td>
+                    <td class="tg-8jgo">6</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">5</td>
+                    <td class="tg-8jgo">3</td>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo">4</td>
+                    <td class="tg-8jgo">7</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">6</td>
+                    <td class="tg-8jgo">1</td>
+                    <td class="tg-8jgo">4</td>
+                    <td class="tg-8jgo"></td>
+                    <td class="tg-8jgo"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">7</td>
+                    <td class="tg-8jgo">3</td>
+                    <td class="tg-8jgo">5</td>
+                    <td class="tg-8jgo">8</td>
+                    <td class="tg-8jgo">9</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">8</td>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo">7</td>
+                    <td class="tg-8jgo">9</td>
+                    <td class="tg-8jgo"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-8jgo">9</td>
+                    <td class="tg-8jgo">2</td>
+                    <td class="tg-8jgo">7</td>
+                    <td class="tg-8jgo">8</td>
+                    <td class="tg-8jgo"></td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    
+        
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="footer-container">
+        <div class="footer">
+          <div class="footer-heading footer-1">
+            <h2 class="Poppins-600">Rețele sociale</h2>
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >Instagram</a
+            >
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >Facebook</a
+            >
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >YouTube</a
+            >
+          </div>
+          <div class="footer-heading footer-2">
+            <h2 class="Poppins-600">Contact</h2>
+
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >WhatsApp</a
+            >
+            <a
+              class="Poppins-200"
+              href="#"
+
+              >EMail</a
+            >
+          </div>
+        </div>
+        <div
+          class="copyright Poppins-200"
+          style="
+            font-size: 14px;
+            margin-left: 30px;
+            margin-top: 150px;
+            margin-bottom: -75px;
+          "
+        >
+          <p>
+            &copy; 2023 Cervinschi Mario-Andrei. <br />
+            Toate drepturile rezervate.
+          </p>
+          <a
+            href="/index.html"
+            class="footer-logo"
+            style="margin-right: 30px"
+          ></a>
+        </div>
+      </div>
+      <script src="/scripts/js/index.js"></script>
+      <script src="/scripts/js/nav.js"></script>
+      <script src="/scripts/js/loading.js"></script>
+    </body>
+  </html>
+</html>

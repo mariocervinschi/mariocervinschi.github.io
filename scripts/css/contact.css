@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+.text:nth-child(5n + 1) {
+  stroke: #848484;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+.text:nth-child(5n + 2) {
+  stroke: #3d3d3d;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+.text:nth-child(5n + 3) {
+  stroke: #848484;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+.text:nth-child(5n + 4) {
+  stroke: #bbbbbb;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+.text:nth-child(5n + 5) {
+  stroke: #ffffff;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+/* Other styles */
+
+svg {
+  display: block;
+  margin: auto;
+  font: 5em Open Sans, Impact;
+  width: 500px;
+  letter-spacing: 10px;
+}
+
+.circle {
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  margin-top: -40px;
+  height: 60px;
+  width: 60px;
+  background-color: #5830a8;
+  border-radius: 50%;
+  display: inline-block;
+  position: flex;
+}
+
+.align {
+  text-align: center;
+}
+
+#resizeico {
+  height: 56px;
+  width: 56px;
+  margin-top: 2px;
+}
+
+.circle:hover {
+  cursor: pointer;
+  background-color: #997eb8;
+  transition: all 0.2s ease-out;
+}
+
+.circle:not(:hover) {
+  cursor: pointer;
+  background-color: #5830a8;
+  transition: all 0.2s ease-in;
+}
+
+.aligncontact {
+  margin-top: 35px;
+}
+
+#btn-form {
+  margin-top: 25px;
+  margin-bottom: 45px;
+  width: 165px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #5830a8;
+  color: #fff;
+  font-size: 18px;
+}
+
+#btn-form:hover {
+  cursor: pointer;
+  background-color: rgb(153, 126, 184);
+  transition: all 0.2s ease-out;
+}
+
+#btn-form:not(:hover) {
+  cursor: pointer;
+  background-color: #5830a8;
+  transition: all 0.165s ease-in;
+}
+
+#btn-form-footer {
+  margin-bottom: 45px;
+  width: 212px;
+  height: 27.5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 1px;
+  background-color: #5830a8;
+  color: #fff;
+  font-size: 16px;
+}
+
+#btn-form-footer:hover {
+  cursor: pointer;
+  background-color: rgb(153, 126, 184);
+  transition: all 0.2s ease-out;
+}
+
+#btn-form-footer:not(:hover) {
+  cursor: pointer;
+  background-color: #5830a8;
+  transition: all 0.165s ease-in;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-links {
+    height: 800px;
+  }
+
+  @supports (backdrop-filter: blur(0.15rem)) {
+    .nav-links {
+      background: rgba(10, 10, 10, 0.829);
+      backdrop-filter: blur(0.8rem);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .circle {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  svg {
+    transition: all 0.2s ease-out;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  svg {
+    transition: all 0.3s ease;
+    width: 400px;
+    letter-spacing: 10px;
+  }
+  .circle {
+    height: 50px;
+    width: 50px;
+    transition: all 0.3s ease;
+  }
+  #resizeico {
+    height: 46px;
+    width: 46px;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  svg {
+    transition: all 0.3s ease;
+  }
+  .circle {
+    transition: all 0.3s ease;
+  }
+  #resizeico {
+    transition: all 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  svg {
+    transition: all 0.3s ease;
+    width: 300px;
+    letter-spacing: 10px;
+  }
+}
+@media screen and (min-width: 401px) {
+  svg {
+    transition: all 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  svg {
+    transition: all 0.3s ease;
+    width: 250px;
+    letter-spacing: 10px;
+  }
+  .circle {
+    height: 40px;
+    width: 40px;
+    transition: all 0.3s ease;
+  }
+  #resizeico {
+    height: 36px;
+    width: 36px;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+@media screen and (min-width: 301px) {
+  svg {
+    transition: all 0.3s ease;
+  }
+  .circle {
+    transition: all 0.3s ease;
+  }
+  #resizeico {
+    transition: all 0.3s ease;
+  }
+}
