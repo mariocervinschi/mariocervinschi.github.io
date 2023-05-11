@@ -1,7 +1,7 @@
 <html lang="en">
   <html>
     <head>
-      <title>Pagina principală</title>
+      <title>Program C++</title>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width = device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="/scripts/css/events.css" />
 
       <link rel="stylesheet" href="/scripts/css/loading.css" />
-      <link rel="icon" type="image/png" href="/assets/logo.png" />
+      <link rel="icon" type="image/png" href="/assets/7.jpg" />
 
       <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;}
@@ -59,56 +59,58 @@
             
         </h1>
 
-        <div class="info Poppins-600 aligncen" style="text-align: justify;">
+        <div class="info Poppins-600 aligncen" style="text-align: justify; ">
           Programul va începe cu declararea bibliotecilor  #include &lt;iostream&gt;, pentru a putea citi de la tastatura datele de intrare (în cazul nostru, nodul de start de unde dorim să începem parcurgerea DFS), și #include &lt;fstream&gt;, pentru a putea memora datele de intrare în fișier, mai exact în „date.in”.
         </div>
         <div class="info Consolas aligncen" style="text-align: justify;">
-          <br><div  style="color:green">
-          #include &lt;iostream&gt; <br>
-          #include &lt;fstream&gt;</div>
-            <br><br>
-           <div><a style="color:cadetblue">using namespace</a> <a style="color:green">std</a>;</div>
+          <br>
+          <span class="line_wrapper"><span style="color:#189060; font-weight:bold; ">#</span><span style="color:#66cdaa; font-weight:bold; ">include </span><span style="color:#fa8072; font-weight:bold; ">&lt;</span><span style="color:#0078b0; font-weight:bold; ">iostream</span><span style="color:#fa8072; font-weight:bold; ">&gt;</span></span>
+          <span class="line_wrapper"><span style="color:#189060; font-weight:bold; ">#</span><span style="color:#66cdaa; font-weight:bold; ">include </span><span style="color:#fa8072; font-weight:bold; ">&lt;</span><span style="color:#0078b0; font-weight:bold; ">fstream</span><span style="color:#fa8072; font-weight:bold; ">&gt;</span></span>
+          <span class="line_wrapper"> </span>
+          <span class="line_wrapper"><span style="color:#00bfff; ">using</span> <span style="color:#00bfff; ">namespace</span> <span style="color:#00a8bc; ">std</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper"> </span>
         </div>
         <br>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
           Datele noastre de intrare vor fi memorate cu ajutorul unui HEAP. Pentru a face acest lucru va trebui să deschidem fișierul de intrare „date.in” cu ajutorul instrucțiunii următoare:
         </div>
         <div class="info Consolas aligncen" style="text-align: justify;">
-          <br><div><a style="color:green">ifstream</a> in<a style="color:red">(</a><a style="color:cadetblue">"date.in"</a><a style="color:red">)</a>;</div>
+          <br>
+          <span class="line_wrapper"><span style="color:#00a8bc; ">ifstream</span> in<span style="color:#deb887; font-weight:bold; ">(</span><span style="color:#fa8072; ">"</span><span style="color:#4084ff; ">date.in</span><span style="color:#fa8072; ">"</span><span style="color:#deb887; font-weight:bold; ">)</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
         </div>
         <br>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
           Urmează să declarăm structura noastră ce ne va ajuta sa creăm HEAP-ul nostru și funcția/subprogramul de tip void, deoarece nu va trebui să returnăm nimic, numit construire_heap pentru a îl putea memora.
         </div>
         <div class="info Consolas aligncen" style="text-align: justify;">
-          <div>
-            <br><a style="color:cadetblue">struct </a> LISTA         <br>
-{                                 <br>
-  &emsp;<a style="color:cadetblue;  ">int </a> inf;                      <br>
-  &emsp;LISTA *urm;                   <br>
-};                                <br>
-void construire_heap(int &n, LISTA *H[])        <br>
-{<br>
-  &emsp;int i, j, nt, t;<br>
-  &emsp;LISTA *first, *nou;<br>
-  &emsp;in >> n; <br>
-  &emsp;&emsp;  for(i = 1; i &lt;= n; i++)<br>
-  &emsp;&emsp;  {<br>
-    &emsp;&emsp;&emsp;        in >> nt; <br>
-    &emsp;&emsp;&emsp; first = NULL;<br>
-    &emsp;&emsp;&emsp;&emsp;    for(j = 1; j &lt;= nt; j++)<br>
-    &emsp;&emsp;&emsp;&emsp;   {<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;       in >> t; <br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;     nou = new(LISTA); <br>
-            &emsp;&emsp;&emsp;&emsp;&emsp;       nou -> inf = t;<br>
-            &emsp;&emsp;&emsp;&emsp;&emsp;    nou -> urm = first;<br>
-            &emsp;&emsp;&emsp;&emsp;&emsp;    first = nou;<br>
-            &emsp;&emsp;&emsp;&emsp;   }<br>
-            &emsp;&emsp;&emsp; H[i] = first;<br>
-      &emsp;&emsp;&emsp;}<br>
-}<br>
-
-          </div>
+          <pre class="code_syntax" style="margin-left:-82">
+            <br>
+          <span class="line_wrapper"><span style="color:#00bfff; ">struct</span> LISTA</span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">int</span> inf<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    LISTA <span style="color:#deb887; font-weight:bold; ">*</span>urm<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">}</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper"> </span>
+          <span class="line_wrapper"><span style="color:#00bfff; ">void</span> construire_heap<span style="color:#deb887; font-weight:bold; ">(</span><span style="color:#00bfff; ">int</span> <span style="color:#deb887; font-weight:bold; ">&amp;</span>n<span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span> <span style="color:#deb887; font-weight:bold; ">&amp;</span>m<span style="color:#deb887; font-weight:bold; ">,</span> LISTA <span style="color:#deb887; font-weight:bold; ">*</span>H<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">int</span> i<span style="color:#deb887; font-weight:bold; ">,</span> j<span style="color:#deb887; font-weight:bold; ">,</span> nt<span style="color:#deb887; font-weight:bold; ">,</span> t<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    LISTA <span style="color:#deb887; font-weight:bold; ">*</span>first<span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#deb887; font-weight:bold; ">*</span>nou<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    in <span style="color:#deb887; font-weight:bold; ">&gt;</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> n<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">for</span><span style="color:#deb887; font-weight:bold; ">(</span>i <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span> i <span style="color:#deb887; font-weight:bold; ">&lt;</span><span style="color:#deb887; font-weight:bold; ">=</span> n<span style="color:#fa8072; font-weight:bold; ">;</span> i<span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">    <span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">        in <span style="color:#deb887; font-weight:bold; ">&gt;</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> nt<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">        first <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#189060; font-weight:bold; ">NULL</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">        <span style="color:#00bfff; ">for</span><span style="color:#deb887; font-weight:bold; ">(</span>j <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span> j <span style="color:#deb887; font-weight:bold; ">&lt;</span><span style="color:#deb887; font-weight:bold; ">=</span> nt<span style="color:#fa8072; font-weight:bold; ">;</span> j<span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">        <span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">            in <span style="color:#deb887; font-weight:bold; ">&gt;</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> t<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">            nou <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#00bfff; ">new</span><span style="color:#deb887; font-weight:bold; ">(</span>LISTA<span style="color:#deb887; font-weight:bold; ">)</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">            nou <span style="color:#deb887; font-weight:bold; ">-</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> inf <span style="color:#deb887; font-weight:bold; ">=</span> t<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">            nou <span style="color:#deb887; font-weight:bold; ">-</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> urm <span style="color:#deb887; font-weight:bold; ">=</span> first<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">            first <span style="color:#deb887; font-weight:bold; ">=</span> nou<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">        <span style="color:#fa8072; font-weight:bold; ">}</span></span>
+          <span class="line_wrapper">        H<span style="color:#deb887; font-weight:bold; ">[</span>i<span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">=</span> first<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    <span style="color:#fa8072; font-weight:bold; ">}</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">}</span></span></pre>
         </div><br>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
           Începem cu declararea variabilelor ajutatoare, urmând să citim numarul de noduri pentru graful nostru neorientat G(X, U). Prima structură repetitivă are rolul de a citi câte noduri au legătura directa cu nodul cu numărul i, iar cea de-a doua structură repetitivă ne va ajuta să memorăm în HEAP care sunt acestea. 
@@ -117,34 +119,33 @@ void construire_heap(int &n, LISTA *H[])        <br>
           <br><img class="info aligncen" src="photos/Screenshot 2023-04-29 193751.png">
         </div>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
-        <br>Funcțiile principale ale programului<br><br>
+        <br>Funcțiile principale ale programului<br>
         </div>
         <div class="info Consolas aligncen" style="text-align: justify;">
-          <div>
-int legatura(LISTA *H[], int x, int y) <br>
-{ <br>
-  &emsp;LISTA *linia; <br>
-  &emsp;linia = H[x]; <br>
-  &emsp;while(linia != NULL) <br>
-  &emsp;{ <br>
-    &emsp;&emsp;if(linia -> inf == y) <br>
-    &emsp;&emsp;&emsp;return 1; <br>
-            &emsp;&emsp;linia = linia -> urm; <br>
-        &emsp;} <br>
-        &emsp;return 0; <br>
-} <br>
-void DFS(int viz[], int noduri[], int ns, LISTA *H[], int n, int& j) <br>
-{ <br>
-  &emsp;int i; <br>
-  &emsp;viz[ns] = 1; <br>
-  &emsp;noduri[j++] = ns; <br>
-  &emsp;for(i = 1; i &lt;= n; i++) <br>
-  &emsp;&emsp;if(viz[i] == 0 and legatura(H, i, ns) == 1) <br>
-  &emsp;&emsp;&emsp;DFS(viz, noduri, i, H, n, j); <br>
-} <br><br>
-
-          </div>
-        </div>
+          <br><pre class="code_syntax"  style="margin-left:-82">
+          <span class="line_wrapper"><span style="color:#00bfff; ">int</span> legatura<span style="color:#deb887; font-weight:bold; ">(</span>LISTA <span style="color:#deb887; font-weight:bold; ">*</span>H<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span> x<span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span> y<span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">    LISTA <span style="color:#deb887; font-weight:bold; ">*</span>linia<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    linia <span style="color:#deb887; font-weight:bold; ">=</span> H<span style="color:#deb887; font-weight:bold; ">[</span>x<span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">while</span><span style="color:#deb887; font-weight:bold; ">(</span>linia <span style="color:#deb887; font-weight:bold; ">!</span><span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#189060; font-weight:bold; ">NULL</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">    <span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">        <span style="color:#00bfff; ">if</span><span style="color:#deb887; font-weight:bold; ">(</span>linia <span style="color:#deb887; font-weight:bold; ">-</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> inf <span style="color:#deb887; font-weight:bold; ">=</span><span style="color:#deb887; font-weight:bold; ">=</span> y<span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">            <span style="color:#00bfff; ">return</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">        linia <span style="color:#deb887; font-weight:bold; ">=</span> linia <span style="color:#deb887; font-weight:bold; ">-</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> urm<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    <span style="color:#fa8072; font-weight:bold; ">}</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">return</span> <span style="color:#66cdaa; font-weight:bold; ">0</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">}</span></span>
+          <span class="line_wrapper"> </span>
+          <span class="line_wrapper"><span style="color:#00bfff; ">void</span> DFS<span style="color:#deb887; font-weight:bold; ">(</span><span style="color:#00bfff; ">int</span> viz<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span> noduri<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span> ns<span style="color:#deb887; font-weight:bold; ">,</span> LISTA <span style="color:#deb887; font-weight:bold; ">*</span>H<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span> n<span style="color:#deb887; font-weight:bold; ">,</span> <span style="color:#00bfff; ">int</span><span style="color:#deb887; font-weight:bold; ">&amp;</span> j<span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">int</span> i<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    viz<span style="color:#deb887; font-weight:bold; ">[</span>ns<span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    noduri<span style="color:#deb887; font-weight:bold; ">[</span>j<span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">=</span> ns<span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">    <span style="color:#00bfff; ">for</span><span style="color:#deb887; font-weight:bold; ">(</span>i <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span> i <span style="color:#deb887; font-weight:bold; ">&lt;</span><span style="color:#deb887; font-weight:bold; ">=</span> n<span style="color:#fa8072; font-weight:bold; ">;</span> i<span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">        <span style="color:#00bfff; ">if</span><span style="color:#deb887; font-weight:bold; ">(</span>viz<span style="color:#deb887; font-weight:bold; ">[</span>i<span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">=</span><span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">0</span> <span style="color:#00bfff; ">and</span> legatura<span style="color:#deb887; font-weight:bold; ">(</span>H<span style="color:#deb887; font-weight:bold; ">,</span> i<span style="color:#deb887; font-weight:bold; ">,</span> ns<span style="color:#deb887; font-weight:bold; ">)</span> <span style="color:#deb887; font-weight:bold; ">=</span><span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">            DFS<span style="color:#deb887; font-weight:bold; ">(</span>viz<span style="color:#deb887; font-weight:bold; ">,</span> noduri<span style="color:#deb887; font-weight:bold; ">,</span> i<span style="color:#deb887; font-weight:bold; ">,</span> H<span style="color:#deb887; font-weight:bold; ">,</span> n<span style="color:#deb887; font-weight:bold; ">,</span> j<span style="color:#deb887; font-weight:bold; ">)</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">}</span></span>
+        </pre></div>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
           Funcția „legatura” are rolul de a răspunde la întrebarea: există legătură directă între nodurile oarecare x și y? În cazul în care aceasta există, se va returna 1, adică adevărat, iar in caz contrar 0, adică nu există o asemenea legătură.
         </div><br>
@@ -228,22 +229,22 @@ void DFS(int viz[], int noduri[], int ns, LISTA *H[], int n, int& j) <br>
         </div> <br>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
           Main-ul programului
-        </div><br><br>
+        </div><br>
         <div class="info Consolas aligncen" style="text-align: justify;">
-          int main()<br>
-          {<br>
-            &emsp;LISTA *H[100];<br>
-            &emsp;int i, n, m, ns, j = 1;<br>
-            &emsp;int noduri[100] = {0}, viz[100] = {0};<br>
-            &emsp;construire_heap(n, m, H);<br>
-            &emsp;cin >> ns; <br>
-            &emsp;DFS(viz, noduri, ns, H, n, j);<br>
-            &emsp;for(i = 1; i < j; i++)<br>
-            &emsp;
-            &emsp;&emsp;cout << noduri[i] << " ";<br>
-            &emsp;return 0;<br>
-          }<br><br>
-                    
+          <pre class="code_syntax"  style="margin-left:-82">
+          <span class="line_wrapper"><span style="color:#00bfff; ">int</span> <span style="color:#00a8bc; ">main</span><span style="color:#deb887; font-weight:bold; ">(</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">{</span></span>
+          <span class="line_wrapper">     LISTA <span style="color:#deb887; font-weight:bold; ">*</span>H<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#66cdaa; font-weight:bold; ">100</span><span style="color:#deb887; font-weight:bold; ">]</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">     <span style="color:#00bfff; ">int</span> i<span style="color:#deb887; font-weight:bold; ">,</span> n<span style="color:#deb887; font-weight:bold; ">,</span> m<span style="color:#deb887; font-weight:bold; ">,</span> ns<span style="color:#deb887; font-weight:bold; ">,</span> j <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">     <span style="color:#00bfff; ">int</span> noduri<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#66cdaa; font-weight:bold; ">100</span><span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#fa8072; font-weight:bold; ">{</span><span style="color:#66cdaa; font-weight:bold; ">0</span><span style="color:#fa8072; font-weight:bold; ">}</span><span style="color:#deb887; font-weight:bold; ">,</span> viz<span style="color:#deb887; font-weight:bold; ">[</span><span style="color:#66cdaa; font-weight:bold; ">100</span><span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#fa8072; font-weight:bold; ">{</span><span style="color:#66cdaa; font-weight:bold; ">0</span><span style="color:#fa8072; font-weight:bold; ">}</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">     construire_heap<span style="color:#deb887; font-weight:bold; ">(</span>n<span style="color:#deb887; font-weight:bold; ">,</span> m<span style="color:#deb887; font-weight:bold; ">,</span> H<span style="color:#deb887; font-weight:bold; ">)</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">     <span style="color:#00a8bc; ">cin</span> <span style="color:#deb887; font-weight:bold; ">&gt;</span><span style="color:#deb887; font-weight:bold; ">&gt;</span> ns<span style="color:#fa8072; font-weight:bold; ">;</span> <span style="color:#a9a9a9; font-weight:bold; font-style:italic; ">// introducem nodul de start</span></span>
+          <span class="line_wrapper">     DFS<span style="color:#deb887; font-weight:bold; ">(</span>viz<span style="color:#deb887; font-weight:bold; ">,</span> noduri<span style="color:#deb887; font-weight:bold; ">,</span> ns<span style="color:#deb887; font-weight:bold; ">,</span> H<span style="color:#deb887; font-weight:bold; ">,</span> n<span style="color:#deb887; font-weight:bold; ">,</span> j<span style="color:#deb887; font-weight:bold; ">)</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">     <span style="color:#00bfff; ">for</span><span style="color:#deb887; font-weight:bold; ">(</span>i <span style="color:#deb887; font-weight:bold; ">=</span> <span style="color:#66cdaa; font-weight:bold; ">1</span><span style="color:#fa8072; font-weight:bold; ">;</span> i <span style="color:#deb887; font-weight:bold; ">&lt;</span> j<span style="color:#fa8072; font-weight:bold; ">;</span> i<span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">+</span><span style="color:#deb887; font-weight:bold; ">)</span></span>
+          <span class="line_wrapper">        <span style="color:#00a8bc; ">cout</span> <span style="color:#deb887; font-weight:bold; ">&lt;</span><span style="color:#deb887; font-weight:bold; ">&lt;</span> noduri<span style="color:#deb887; font-weight:bold; ">[</span>i<span style="color:#deb887; font-weight:bold; ">]</span> <span style="color:#deb887; font-weight:bold; ">&lt;</span><span style="color:#deb887; font-weight:bold; ">&lt;</span> <span style="color:#fa8072; ">"</span><span style="color:#4084ff; "> </span><span style="color:#fa8072; ">"</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper">     <span style="color:#00bfff; ">return</span> <span style="color:#66cdaa; font-weight:bold; ">0</span><span style="color:#fa8072; font-weight:bold; ">;</span></span>
+          <span class="line_wrapper"><span style="color:#fa8072; font-weight:bold; ">}</span></span>
+            <br> </pre>   
         </div>
         <div class="info Poppins-600 aligncen" style="text-align: justify;">
           În main vom declara toate variabilele necesare și vom apela funcțiile rând pe rând. Prima va fi construire_heap, care ne va ajuta sa memorăm datele de intrare (citite din fișier), după aceea vom citi un număr natural nenul ns, ns &le; n (n fiind numărul de noduri, memorat în fișierul de intrare). Urmează să apelăm funcția DFS, unde vom prelucra datele de intrare și le vom transforma în date de ieșire, memorându-le în vectorul „noduri”.
@@ -303,6 +304,12 @@ void DFS(int viz[], int noduri[], int ns, LISTA *H[], int n, int& j) <br>
               href="#"
 
               >WhatsApp</a
+            >
+            <a
+              class="Poppins-200"
+              href="https://carsofsuceava.github.io/"
+              target="_blank"
+              >Mașini</a
             >
             <a
               class="Poppins-200"
